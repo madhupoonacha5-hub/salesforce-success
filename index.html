@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Signature Success OS | Frontline Operating Model (Simulation)</title>
+<style>
+:root{--bg:#f4f7fa;--card:#fff;--ink:#12304f;--mut:#5b6b7b;--acc:#0b7a8a;--line:#d9e1e8;--hl:#fff1b8;--ok:#1e8e5a;--wn:#c77d0a;--bd:#c0392b;color-scheme:light}
+@media(prefers-color-scheme:dark){:root{--bg:#0e1621;--card:#16212e;--ink:#e6edf3;--mut:#9fb0c0;--acc:#3cc0d3;--line:#263647;--hl:#4a3f12;--ok:#4cc38a;--wn:#e0a53a;--bd:#ef6a5b;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{padding:14px 20px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:var(--card)}
+h1{font-size:18px;margin:0}h1 small{display:block;font-weight:400;color:var(--mut);font-size:12px}
+.b{font-size:11px;border:1px solid var(--line);border-radius:99px;padding:3px 9px;color:var(--mut);margin-left:6px}
+.banner{padding:14px 20px;background:linear-gradient(90deg,#12304f,#0b7a8a);color:#fff}
+.banner h2{margin:0 0 8px;font-size:15px}.banner button{margin:0 8px 6px 0}
+button{font:inherit;cursor:pointer;border:1px solid var(--acc);background:var(--card);color:var(--ink);padding:7px 13px;border-radius:7px}
+.banner button.p{background:#fff;color:#12304f;border-color:#fff;font-weight:600}.banner button{background:transparent;color:#fff;border-color:#ffffff88}
+#nar{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:2px solid var(--acc);padding:9px 20px;min-height:58px}
+#nar b{color:var(--acc)}#tr{margin-top:4px}.chip{display:inline-block;font:11px ui-monospace,Menlo,monospace;background:var(--bg);border:1px solid var(--line);border-radius:5px;padding:1px 6px;margin:2px 4px 0 0}
+.wrap{display:grid;grid-template-columns:190px 1fr 310px;gap:12px;padding:12px 20px}
+@media(max-width:1000px){.wrap{grid-template-columns:1fr}}
+aside,.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.tree div{padding:3px 6px;border-radius:5px;font:12px ui-monospace,Menlo,monospace;color:var(--mut);cursor:pointer}.tree .d{color:var(--ink);font-weight:700;cursor:default;margin-top:6px}
+.tree .on{background:var(--hl);color:var(--ink)}
+.tabs button{margin-right:6px;border-radius:7px 7px 0 0}.tabs .on{background:var(--acc);color:#fff}
+.pane{display:none}.pane.on{display:block}.card{margin-bottom:12px}.card h3{margin:0 0 8px;font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--mut)}
+.kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}.kpi .card{margin:0;text-align:center}.kpi b{font-size:22px;display:block}
+table{width:100%;border-collapse:collapse}td,th{padding:6px 7px;border-bottom:1px solid var(--line);text-align:left;font-size:13px}th{color:var(--mut);font-weight:600}
+tr.f{animation:fl 1.6s}@keyframes fl{0%,60%{background:var(--hl)}}
+.st{padding:2px 8px;border-radius:99px;font-size:11px;font-weight:700;color:#fff}.Healthy{background:var(--ok)}.Watch{background:var(--wn)}.Escalated{background:var(--bd)}
+.bar{height:8px;background:var(--line);border-radius:5px;overflow:hidden}.bar i{display:block;height:100%;background:var(--acc);transition:width .8s}
+.row{display:grid;grid-template-columns:120px 1fr 120px;gap:8px;align-items:center;margin:6px 0;font-size:12px}
+.hide{display:none}input,select{font:inherit;padding:6px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);width:100%}
+.dr{white-space:pre-wrap;background:var(--bg);border:1px dashed var(--line);border-radius:8px;padding:9px;font-size:13px;min-height:40px}
+pre{margin:0;font:11.5px/1.5 ui-monospace,Menlo,monospace;white-space:pre-wrap}pre span{display:block;padding:0 4px}pre .hl{background:var(--hl);outline:1px solid var(--wn)}
+.ok{color:var(--ok);font-weight:700}.note{font-size:12px;color:var(--mut)}#log div{font-size:12px;padding:2px 0;border-bottom:1px solid var(--line)}#log time{color:var(--acc);font-family:ui-monospace,monospace;margin-right:6px}
+button.press{transform:scale(.95);background:var(--ok);color:#fff}footer{padding:10px 20px 24px;font-size:11.5px;color:var(--mut)}
+</style></head><body>
+<header><h1>Signature Success OS<small>Frontline operating model: how a leader turns agentic signals into human-led customer success</small></h1>
+<div><span class="b">Synthetic data</span><span class="b">Agentic Reasoning Layer (MCP Client)</span><span class="b">Agentforce / Einstein signal slots (simulated)</span></div></header>
+<div class="banner"><h2>A day on the 6:30 PM IST shift: pick a scenario (each runs hands-free in about 30 seconds)</h2>
+<button class="p" onclick="go(1)">1. Silent Erosion</button><button class="p" onclick="go(2)">2. Tough Escalation</button><button class="p" onclick="go(3)">3. 180-Day Renewal Handoff</button><button onclick="go(0)">Run all three</button><button onclick="rst(true)">Reset</button></div>
+<div id="nar"><div id="nt">Choose a scenario above. The screen, folder tree and policy file will follow the action automatically.</div><div id="tr"></div></div>
+<div class="wrap">
+<aside class="tree" id="tree"></aside>
+<main><div class="tabs"><button data-t="cockpit" class="on">Manager Cockpit</button><button data-t="bench">CSM Workbench</button><button data-t="value">Customer Value</button></div>
+<section class="pane on" id="p-cockpit" style="padding-top:10px">
+<div class="kpi"><div class="card"><b id="k1">-</b>Portfolio health</div><div class="card"><b id="k2">-</b>Accounts needing action</div><div class="card"><b id="k3">-</b>Renewals within 180 days</div></div>
+<div class="card" id="acc"><h3>Signature book of business</h3><table><thead><tr><th>Account</th><th>Cloud</th><th>CSM</th><th>Health</th><th>Renewal</th><th>State</th></tr></thead><tbody id="rows"></tbody></table></div>
+<div class="card" id="cap"><h3>CSM capacity (complexity and risk weighted)</h3><div id="caps"></div></div>
+<div class="card" id="hand"><h3>One Salesforce handoffs</h3><div id="hl" class="note">No handoffs yet.</div></div>
+<div class="card"><h3>Audit trail (append-only)</h3><div id="log"></div></div></section>
+<section class="pane" id="p-bench" style="padding-top:10px">
+<div class="card" id="sig"><h3 id="wbh">Signals</h3><div id="bars"></div><div class="note" id="blind"></div></div>
+<div class="card" id="ov"><h3>Human context: what AI can't see</h3><input id="on" placeholder="CSM note"><div class="row" style="grid-template-columns:1fr 1fr"><select id="oe"><option>No change</option><option>Hold severity</option></select><input id="ox" type="date"></div><button id="osv">Save override</button> <span id="ob" class="ok"></span></div>
+<div class="card" id="dc"><h3>Drafted by comms-studio (needs approval)</h3><div class="dr" id="dt"></div><p><button id="ap">Manager approves</button> <span id="as" class="ok"></span></p></div>
+<div class="card hide" id="eb"><h3>Executive escalation brief</h3><div class="dr" id="et"></div></div></section>
+<section class="pane" id="p-value" style="padding-top:10px"><div class="card" id="vl"><h3>Value ledger</h3><div id="vt" class="note">Run a scenario to see outcomes.</div></div></section>
+</main>
+<aside><h3 style="margin:0 0 6px;font-size:13px">View policy rules</h3><div id="fp" class="note"></div><pre id="fv"></pre></aside></div>
+<footer>Simulation built on synthetic data to show a way of working. Signal slots are simulated, are not Agentforce or Einstein outputs, and nothing here is affiliated with or endorsed by Salesforce. Rules decide, the AI explains, a human approves anything customer-facing.</footer>
+<script>
+const $=s=>document.querySelector(s),sl=ms=>new Promise(r=>setTimeout(r,ms));
+const MCP={'signature-accounts':['get_account','update_plan'],'health-telemetry':['get_signals','compute_health'],'risk-engine':['evaluate_risk','recommend_escalation'],'value-ledger':['value_summary','log_outcome'],'one-salesforce':['create_handoff','capacity_view'],'comms-studio':['draft_message','qa_check'],'coaching':['log_coaching','skills_gap']};
+const POL=[['','version: 1  # declarative policy, not code'],['H','health: {adoption: .35, friction: .25, exec_contact: .25, sponsor: .15}'],['R1','- id: R1  when: erosion_flags >= 2'],['R1','  then: state=Watch, plan="2-week action plan"'],['R2','- id: R2  when: erosion_flags >= 3 or open_p1 >= 2'],['R2','  then: state=Escalated, mobilize=exec_sponsor, brief=auto'],['R3','- id: R3  when: renewal_days <= 180 and health < 70'],['R3','  then: handoff=Renewals, evidence=value_ledger'],['R4','- id: R4  when: override.active'],['R4','  then: hold_severity, recheck_on=override.expiry'],['R5','- id: R5  when: message.customer_facing'],['R5','  then: require=manager_approval']];
+const PAGES={cockpit:'pages/manager-cockpit.html',bench:'pages/csm-workbench.html',value:'pages/customer-value.html'};
+const FILES=['policies/signature.policy.yaml',...Object.keys(MCP).map(k=>'mcp/'+k+'.json'),'logs/events.log'];
+const mk=(n,cl,csm,ren,sc,raw)=>({n,cl,csm,ren,sc,raw,st:'Healthy',ov:null});
+const base=()=>[mk('Northwind Retail','Sales Cloud','Priya',240,[48,75,38,100],{ad:-22,ex:74,tk:1,p1:0,sp:false}),mk('Contoso Health','Service Cloud','Daniel',310,[52,30,60,40],{ad:-18,ex:48,tk:4,p1:2,sp:true}),mk('Fabrikam Logistics','Service + Data Cloud','Priya',176,[55,70,70,100],{ad:-5,ex:30,tk:1,p1:0,sp:false}),...[['Tailspin Energy','Sales Cloud','Meera'],['Litware Finance','Service Cloud','Alex'],['Adventure Media','Marketing Cloud','Meera'],['Proseware Telecom','Service Cloud','Daniel'],['Wingtip Pharma','Sales Cloud','Alex']].map((x,i)=>mk(x[0],x[1],x[2],400+i*35,[85,80,78,100],{ad:4,ex:20,tk:0,p1:0,sp:false}))];
+let A,H,LG,clock,run=0,cur='cockpit',openF='';
+const hs=a=>Math.round(.35*a.sc[0]+.25*a.sc[1]+.25*a.sc[2]+.15*a.sc[3]);
+const fl=a=>[['Adoption down '+Math.abs(a.raw.ad)+'%',a.raw.ad<=-15],['Executive contact '+a.raw.ex+' days ago',a.raw.ex>60],[a.raw.tk+' unresolved tickets ('+a.raw.p1+' P1)',a.raw.tk>=3],['Sponsor changed',a.raw.sp]].filter(x=>x[1]).map(x=>x[0]);
+const tm=()=>{const m=1110+clock;clock+=3;return String(Math.floor(m/60)%24).padStart(2,'0')+':'+String(m%60).padStart(2,'0')};
+function log(t,r){LG.unshift('<time>'+tm()+' IST</time>'+t+(r?' <span class="chip">'+r+'</span>':''));$('#log').innerHTML=LG.slice(0,7).map(x=>'<div>'+x+'</div>').join('');if(openF==FILES[FILES.length-1])showF(openF)}
+function tree(){let h='<div class="d">pages/</div>';for(const k in PAGES)h+='<div data-f="'+PAGES[k]+'" class="'+(PAGES[k]==openF?'on':'')+'">'+PAGES[k].split('/')[1]+'</div>';let g='';for(const f of FILES){const d=f.split('/')[0];if(d!=g){g=d;h+='<div class="d">'+d+'/</div>'}h+='<div data-f="'+f+'" class="'+(f==openF?'on':'')+'">'+f.split('/')[1]+'</div>'}$('#tree').innerHTML=h;$('#tree').querySelectorAll('[data-f]').forEach(e=>e.onclick=()=>showF(e.dataset.f))}
+function showF(f,r){openF=f;tree();$('#fp').textContent='/'+f;let h='';if(f.startsWith('policies'))h=POL.map(p=>'<span class="'+(r&&p[0]==r?'hl':'')+'">'+p[1]+'</span>').join('');else if(f.startsWith('mcp')){const s=f.slice(4,-5);h=JSON.stringify({server:s,transport:'MCP',tools:MCP[s],mode:'simulated'},null,1).split('\n').map(x=>'<span>'+x+'</span>').join('')}else if(f.startsWith('logs'))h=LG.map(x=>'<span>'+x.replace(/<[^>]+>/g,' ')+'</span>').join('')||'<span>(empty)</span>';else h='<span>'+f+'</span><span>Page is active in the main view.</span>';$('#fv').innerHTML=h;const hl=$('#fv .hl');if(hl)hl.scrollIntoView({block:'nearest',behavior:'smooth'})}
+function tab(t){cur=t;document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.t==t));document.querySelectorAll('.pane').forEach(p=>p.classList.toggle('on',p.id=='p-'+t));showF(PAGES[t])}
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{run++;tab(b.dataset.t)});
+function draw(fi){$('#rows').innerHTML=A.map((a,i)=>'<tr id="r'+i+'" class="'+(fi===i?'f':'')+'"><td><b>'+a.n+'</b></td><td>'+a.cl+'</td><td>'+a.csm+'</td><td>'+hs(a)+'</td><td>'+a.ren+' d</td><td><span class="st '+a.st+'">'+a.st+(a.ov?' (override)':'')+'</span></td></tr>').join('');
+$('#k1').textContent=Math.round(A.reduce((s,a)=>s+hs(a),0)/A.length);$('#k2').textContent=A.filter(a=>a.st!='Healthy').length;$('#k3').textContent=A.filter(a=>a.ren<=180).length;
+const w={Healthy:1,Watch:1.5,Escalated:3},L={};A.forEach(a=>L[a.csm]=(L[a.csm]||0)+w[a.st]);$('#caps').innerHTML=Object.keys(L).map(c=>'<div class="row"><span>'+c+'</span><div class="bar"><i style="width:'+Math.min(100,L[c]/6*100)+'%"></i></div><span>load '+L[c]+'</span></div>').join('')}
+function wb(i){const a=A[i];$('#wbh').textContent='Signals: '+a.n+' ('+a.st+')';const nm=['Adoption','Ticket friction','Executive contact','Sponsor stability'],rw=[a.raw.ad+'% trend',a.raw.tk+' open tickets',a.raw.ex+' days',a.raw.sp?'changed':'stable'];$('#bars').innerHTML=a.sc.map((v,k)=>'<div class="row"><span>'+nm[k]+'</span><div class="bar"><i style="width:'+v+'%"></i></div><span>'+v+' | '+rw[k]+'</span></div>').join('')+'<div class="row"><b>Health score</b><div class="bar"><i style="width:'+hs(a)+'%"></i></div><b>'+hs(a)+'</b></div>';$('#blind').textContent='The signal shows what changed. It cannot show why. Flags: '+(fl(a).join('; ')||'none')}
+async function type(el,t,sp=14,id){el.textContent='';for(const c of t){if(id!=run)return;el.textContent+=c;await sl(sp)}}
+function hold(id,ms){return id==run?sl(ms):new Promise(()=>{})}
+function sc(sel){const e=$(sel);if(e&&e.offsetParent)e.scrollIntoView({behavior:'smooth',block:'center'})}
+function setS(i,s,r){A[i].st=s;draw(i);log(A[i].n+' moved to <b>'+s+'</b>',r);sc('#r'+i)}
+async function gate(id,who){sc('#dc');await hold(id,900);$('#ap').classList.add('press');await hold(id,400);$('#as').textContent='Approved by '+who+' and sent';log('Customer-facing message approved by manager','R5');showF(FILES[0],'R5')}
+async function draft(id,t,i){sc('#dc');await type($('#dt'),t,12,id);$('#as').textContent='';$('#ap').classList.remove('press');await hold(id,500)}
+function rst(full){run++;A=base();LG=[];clock=0;$('#hl').innerHTML='No handoffs yet.';['#dt','#et','#ob','#as','#on','#vt'].forEach(s=>{const e=$(s);e.textContent='';e.value=''});$('#vt').textContent='Run a scenario to see outcomes.';$('#eb').classList.add('hide');$('#tr').innerHTML='';draw();$('#log').innerHTML='';wb(0);if(full){$('#nt').textContent='Choose a scenario above. The screen, folder tree and policy file will follow the action automatically.';tab('cockpit');scrollTo({top:0,behavior:'smooth'})}}
+function tr(s){const[k,t]=s.split('.');$('#tr').innerHTML+='<span class="chip">'+s+'</span>'}
+async function N(id,t,tabn,f,r,tool){if(id!=run)return;$('#nt').innerHTML=t;if(tool)tr(tool);if(tabn)tab(tabn);if(f)showF(f,r);await sl(900)}
+const P=FILES[0];
+const SC={
+1:async id=>{const i=0,a=A[i];$('#tr').innerHTML='';
+await N(id,'<b>1. Silent Erosion.</b> Telemetry arrives for Northwind Retail. No ticket, no complaint, only quiet signals.','cockpit','mcp/health-telemetry.json',0,'health-telemetry.get_signals');sc('#r0');draw(0);await hold(id,1400);
+await N(id,'Risk engine applies <b>R1</b>: two erosion flags ('+fl(a).join(', ')+').','cockpit',P,'R1','risk-engine.evaluate_risk');setS(i,'Watch','R1');await hold(id,1800);
+await N(id,'CSM opens the workbench. <b>What the AI can\'t see</b> is why the executive went quiet.','bench',null,null,'coaching.skills_gap');wb(i);sc('#sig');await hold(id,1800);
+await N(id,'CSM logs human context. Policy <b>R4</b>: the override is honoured, with an expiry and a re-check.','bench',P,'R4','signature-accounts.update_plan');sc('#ov');await type($('#on'),'Champion on leave until 12 Jan; deputy engaged as interim exec contact',14,id);$('#oe').value='Hold severity';$('#ox').value='2027-01-12';await hold(id,500);$('#osv').classList.add('press');a.ov=1;$('#ob').textContent='Override active until 12 Jan 2027, auto re-check';draw(i);log('Human-context override saved, expires 12 Jan 2027','R4');await hold(id,1500);
+await N(id,'Comms studio drafts a proactive message. <b>R5</b>: customer-facing, so it needs manager approval.','bench',P,'R5','comms-studio.draft_message');await draft(id,'Hi Dana, I noticed usage of the Sales Cloud forecasting workflow has eased this quarter. I would like to set up a 30-minute working session with your deputy to restore momentum before the January review. Which day works?',i);
+await N(id,'Manager approval gate.','bench',P,'R5','comms-studio.qa_check');await gate(id,'Manager');sc('#r0');tab('cockpit');await hold(id,1200);$('#nt').innerHTML='<b>Scenario 1 complete.</b> Rule fired, state changed, human context respected, manager approved. Nothing was sent without a person.'},
+2:async id=>{const i=1,a=A[i];$('#tr').innerHTML='';
+await N(id,'<b>2. Tough Escalation.</b> Contoso Health: adoption down, tickets piling up, and a new sponsor.','cockpit','mcp/health-telemetry.json',0,'health-telemetry.get_signals');draw(1);sc('#r1');await hold(id,1400);
+await N(id,'Risk engine applies <b>R2</b>: '+fl(a).length+' flags and 2 open P1 tickets.','cockpit',P,'R2','risk-engine.evaluate_risk');setS(i,'Escalated','R2');await hold(id,1800);
+await N(id,'An <b>executive escalation brief</b> is assembled with a named sponsor and a re-check date.','bench',P,'R2','risk-engine.recommend_escalation');wb(i);$('#eb').classList.remove('hide');sc('#eb');await type($('#et'),'Situation: 2 open P1 tickets, adoption down 18%, new sponsor.\nCustomer ask: a named owner and a fix date.\nExec sponsor mobilized: VP Customer Operations.\nCommitment: fix plan in 48 hours, re-check on day 14.',10,id);log('Escalation brief generated, exec sponsor mobilized','R2');await hold(id,1200);
+await N(id,'Message to the customer executive. A human reviews tone and facts before it goes out.','bench',P,'R5','comms-studio.draft_message');await draft(id,'Dear Sam, thank you for your patience on the two priority cases. Our VP of Customer Operations is now sponsoring the fix. You will have a named owner and a dated plan within 48 hours. I would like to review progress with you on day 14.',i);await gate(id,'Manager');
+await N(id,'Engineering handoff through One Salesforce, so the customer sees one team.','cockpit',null,null,'one-salesforce.create_handoff');$('#hl').innerHTML='<div>Engineering: P1 owner assigned for Contoso Health, due in 48 hours</div>';log('Handoff to Engineering created with account context');sc('#hand');await hold(id,1600);$('#nt').innerHTML='<b>Scenario 2 complete.</b> The account was spotted before it turned red and the team acted as one.'},
+3:async id=>{const i=2,a=A[i];$('#tr').innerHTML='';
+await N(id,'<b>3. 180-Day Renewal Handoff.</b> Fabrikam Logistics renews in '+a.ren+' days, health '+hs(a)+'.','cockpit','mcp/health-telemetry.json',0,'health-telemetry.compute_health');draw(2);sc('#r2');await hold(id,1400);
+await N(id,'<b>R3</b>: renewal within 180 days and health below 70. The engine flags the renewal risk.','cockpit',P,'R3','risk-engine.evaluate_risk');setS(i,'Watch','R3');await hold(id,1700);
+await N(id,'Value ledger supplies the evidence for the handoff.','value',null,null,'value-ledger.value_summary');$('#vt').innerHTML='<table><tr><th>Outcome</th><th>Baseline</th><th>Target</th><th>Actual</th></tr><tr><td>Case deflection</td><td>20%</td><td>40%</td><td>31%</td></tr><tr><td>Time to resolve</td><td>52 h</td><td>24 h</td><td>38 h</td></tr><tr><td>Feature adoption</td><td>35%</td><td>60%</td><td>52%</td></tr></table><p class="note">Quarterly value review ready: all three outcomes moved toward target.</p>';sc('#vl');await hold(id,2200);
+await N(id,'Handoff to Renewals with evidence, 176 days out.','cockpit',P,'R3','one-salesforce.create_handoff');$('#hl').innerHTML+='<div>Renewals: Fabrikam Logistics, renewal in 176 days, value summary attached</div>';log('Renewals handoff created with value evidence','R3');sc('#hand');await hold(id,1700);
+await N(id,'Capacity check keeps the team balanced.','cockpit',null,null,'one-salesforce.capacity_view');sc('#cap');await hold(id,1400);$('#nt').innerHTML='<b>Scenario 3 complete.</b> Renewal risk reached Renewals early, with evidence attached.'}};
+async function go(n){rst(false);const id=run;scrollTo({top:0,behavior:'smooth'});await sl(300);if(n){await SC[n](id)}else{for(const k of [1,2,3]){if(id!=run)return;await SC[k](id);await sl(1200);if(k<3){$('#tr').innerHTML='';A=base();draw();LG=[];$('#log').innerHTML=''}}}}
+rst(true);
+</script></body></html>
